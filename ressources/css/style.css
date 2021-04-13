@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* RESET DEFAULT CSS SETTINGS */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
   margin: 0;
   padding: 0;
@@ -14,6 +15,7 @@ a {
   color: black;
   text-decoration: none; /* no underline */
 }
+/* END RESET */
 
 html {
   font-family: Raleway;
@@ -43,7 +45,7 @@ main {
 /* HEADER STYLE */
 header {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 3fr 2fr 1fr;
   grid-template-areas: "logo nav subscribe";
 }
 
@@ -54,45 +56,66 @@ header {
 
 #subscribe {
   grid-area: subscribe;
-  /* grid-row: 1; */
-  /* grid-column: 4; */
-  padding: 2em 4em 0 2em;
+  padding: 2.5em 4em 0 2em;
   color: #0065FC;
   font-weight: bold;
 }
 
 nav {
   grid-area: nav;
-  /* grid-row: 1; */
-  /* grid-column: 3; */
-}
-
-nav ul {
-  list-style: none;
   display: flex;
+  justify-content: space-evenly;
 }
 
-nav li p {
-  padding: 2em 0 0 3em;
+nav a {
+  padding: 2.5em 0;
+  width: 100%;
+  text-align: center;
 }
+
+nav a:active {
+  color: #0065FC;
+  padding-top: 2.3em;
+  border-top: #0065FC 3px solid;
+}
+
+/* PHONE SCREEN */
 
 @media screen and (max-width: 800px)
 {
   header {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: minmax(100px, auto);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(1fr, 2);
+    grid-template-areas:  "logo subscribe"
+                          "nav nav";
   }
-
+  
+  #logo {
+    padding: 1.5em 0 0 1.5em;
+  }
+  
   #subscribe {
-    grid-row: 1;
-    grid-column: 2;
-    padding: 2.5em 0 0 1em;
+    padding: 2.5em 1.25em 0 0;
+    text-align: end;
   }
 
   nav {
-    grid-row: 2;
-    grid-column: 1 / 3;
+    justify-content: space-around;
+  }
+
+  nav a {
+    width: 100%;
+    border-bottom: #F2F2F2 3px solid;
+    padding: 1.5em 0 1em 0;
+  }
+   
+  }
+
+  nav a:active {
+    border-bottom: #0065FC 3px solid;
+    padding-top: 1.5em;
+    border-top: none;
   }
 }
 
@@ -117,8 +140,6 @@ aside {
 }
 
 #rent {
-  grid-row: 2;
-  grid-column: 1 / 4;
   display: flex;
   flex-direction: column;
   align-items: center;
