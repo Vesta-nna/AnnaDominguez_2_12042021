@@ -125,7 +125,30 @@ section {
 @media screen and (max-width: 800px)
 {
   section {
-    padding: 3.5em 1.5em;
+    padding: 0;
+  }
+}
+
+.choices {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: "article aside";
+}
+
+article {
+  grid-area: article;
+}
+
+aside {
+  grid-area: aside
+}
+
+@media screen and (max-width: 800px) {
+  .choices {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:  "aside"
+                          "article";
   }
 }
 
@@ -158,7 +181,7 @@ article .card {
   margin: 1em 0;
   padding: 0.3em 0.3em 0.7em 0.3em;
   font-size: 12px;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
@@ -168,13 +191,13 @@ article .card:hover {
 
 article img {
   object-fit: cover;
-  height: 150px;
+  max-height: 100px;
   width: 100%;
   border-radius: 0.75em 0.75em 0 0;
 }
 
 article .card h4 {
-  padding: 0.3em 1em;
+  padding: 0.3em 0.75em;
   font-size: 1.2em;
 }
 
@@ -199,7 +222,7 @@ article .rating {
 {
   article {
     background-color: white;
-    padding: 0 0;
+    padding: 2em 1.5em;
   }
 
   article .row {
@@ -211,19 +234,104 @@ article .rating {
 
   article .card {
     background-color: white;
+    margin: 0.5em 0;
     width: 100%;
   }
-
 }
 /* END RENTING ARTICLE */
 
+/* ASIDE STYLING */
 aside {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  background-color: #F2F2F2;
+  border-radius: 0.75em;
+  margin-left: 2em;
+  padding: 3em 2em 1em 2em;
 }
 
+aside .title {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1em;
+}
+
+aside .title i {
+  font-size: 1.25em;
+}
+
+aside .cards {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+aside .card {
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  grid-template-rows: auto auto auto auto;
+  /* display: flex; */
+  width: 100%;
+  border-radius: 0.75em;
+  margin: 1em 0;
+  padding: 0.3em 0.3em;
+  font-size: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+aside .card:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+aside img {
+  grid-column: 1;
+  grid-row: 1 / 5;
+  object-fit: cover;
+  height: 120px;
+  width: 100%;
+  border-radius: 0.75em 0 0 0.75em;
+}
+
+aside .card h4 {
+  grid-row: 1;
+  padding: 0.5em 0 0.3em 1.5em;
+  font-size: 1.2em;
+}
+
+aside p {
+  grid-row: 2;
+  padding: 0.25em 1.7em;
+}
+
+aside .rating {
+  grid-row: 4;
+  padding: 0 0 0.75em 1.7em;
+  display: flex;
+}
+
+@media screen and (max-width: 800px)
+{
+  aside {
+    padding: 2em 1.5em;
+    margin-left: 0;
+    border-radius: 0;
+  }
+
+  aside .card {
+    margin: 0.5em 0;
+  }
+
+  aside img {
+    height: 140px;
+  }
+}
+
+/* END ASIDE */
 #rent {
   display: flex;
   flex-direction: column;
@@ -238,29 +346,6 @@ aside {
   align-items: center;
 }
 
-.choices {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-@media screen and (max-width: 800px) {
-  .choices {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:  "aside"
-                          "article";
-  }
-
-  article {
-    grid-area: article;
-  }
-
-  aside {
-    grid-area: aside
-  }
-}
-
 
 /* FOOTER STYLE */
 footer {
@@ -270,6 +355,7 @@ footer {
     grid-template-areas:  "about quality assistance";
   align-items: center;
   padding: 3em 3em;
+  font-size: 13px;
 }
 
 footer h3 {
