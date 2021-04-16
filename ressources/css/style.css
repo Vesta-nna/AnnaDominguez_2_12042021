@@ -21,6 +21,7 @@ html {
 }
 
 body {
+  font-size: 14px;
   display: grid;
   grid-template-columns: 1fr;
   /* grid-gap: 10px; */
@@ -72,7 +73,7 @@ nav a {
   text-align: center;
 }
 
-nav a:active {
+nav a:hover {
   color: #0065FC;
   padding-top: 2.3em;
   border-top: #0065FC 3px solid;
@@ -109,7 +110,7 @@ nav a:active {
     padding: 1.5em 0 1em 0;
   }
    
-  nav a:active {
+  nav a:hover {
     border-bottom: #0065FC 3px solid;
     padding-top: 1.5em;
     border-top: none;
@@ -118,8 +119,163 @@ nav a:active {
 
 /* END HEADER STYLE */
 
-section {
-  padding: 3.5em;
+#renting-search {
+  padding: 0 3.5em 3.5em 3.5em;  
+}
+
+@media screen and (max-width: 800px)
+{
+  #renting-search {
+    padding: 2em 0;  
+  }
+}
+
+.search h2 {
+  padding-bottom: 0.3em;
+}
+
+.search {
+  padding: 1em 0 2em 0;
+}
+
+.town {
+  padding-top: 1em;
+  display: flex;
+  align-items: center;
+}
+
+.town .loop p {
+  font-weight: 600;
+  font-size: 1.1em;
+  background-color: #0065FC;
+  color: white;
+  padding: 0.8em 1em;
+  border-radius: 0 0.75em 0.75em 0;
+  grid-area: search;
+}
+
+.town .loop i {
+  display: none;
+}
+
+.town .location {
+  font-size: 1.1em;
+  background-color: #F2F2F2;
+  padding: 0.85em 1.1em;
+  border-radius: 0.75em 0 0 0.75em;
+}
+
+.town input {
+  border-top: #F2F2F2 solid 2px;
+  border-bottom: #F2F2F2 solid 2px;
+  border-right: none;
+  border-left: none;
+  padding: 0.7em 1.5em;
+  font-weight: 600;
+  font-size: 1.1em;
+  color: black;
+}
+
+@media screen and (max-width: 800px)
+{
+  .town {
+    padding: 2em 0 1em 0;
+  }
+  
+  .town .loop i {
+    display:inherit;
+    background-color: #0065FC;
+    color: white;
+    padding: 1em 1em;
+    border-radius: 0.75em 0.75em 0.75em 0.75em;
+  }
+  .town .loop p {
+    display: none;
+  }
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.options {
+  padding: 2em 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filters>h3 {
+  padding-right: 1em;
+}
+
+.filter {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-areas: "i name";
+  align-items: center;
+  margin: 0 1em;
+  border-radius: 5em;
+  border: #F2F2F2 solid 2px;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1)
+}
+
+.filter h3 {
+  grid-area: name;
+  padding: 0 1em;
+}
+
+.filter i {
+  grid-area: i;
+  color: #0065FC;
+  background-color: #DEEBFF;
+  border-radius: 100%;
+  padding: 1em;
+}
+
+.filter:hover {
+  grid-template-areas: "name i";
+  color: #DEEBFF;
+  background-color: #0065FC;
+  border-left: #F2F2F2 solid 2px;
+  border-radius: 5em;
+}
+
+.info i {
+  border: 2px solid #F2F2F2;
+  padding: 0.40em 0.65em;
+  margin-right: 1em;
+  font-size: 0.75em;
+  border-radius: 100%;
+  color: #0065FC;
+}
+
+@media screen and (max-width: 800px)
+{
+  .search {
+    padding: 0 1.5em;
+  }
+
+  .filters {
+    padding-top: 1em;
+  }
+
+  .options {
+    padding: 0.5em 0;
+  }
+
+  .filter {
+    margin: 0.5em 0.3em 0.5em 0;
+  }
+
+  .info {
+    padding: 1.5em 0;
+    display: flex;
+    align-items: flex-start;
+  }
+
 }
 
 @media screen and (max-width: 800px)
@@ -129,83 +285,65 @@ section {
   }
 }
 
-.choices {
+.renting-founded {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-template-areas: "article aside";
+  grid-template-areas: "random bests";
+  grid-gap: 2.5em;
 }
 
-article {
-  grid-area: article;
+.random {
+  grid-area: random;
 }
 
-aside {
-  grid-area: aside
+.bests {
+  grid-area: bests;
 }
 
 @media screen and (max-width: 800px) {
-  .choices {
+  .renting-founded {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-areas:  "aside"
-                          "article";
+    grid-gap: 0;
+    grid-template-areas:  ".bests"
+                          ".random";
   }
 }
-
-/* RENTING ARTICLE STYLE */
-
-article {
-  background-color: #F2F2F2;
+/* RENTING AND BESTS COMMON STYLE */
+.random, .bests {
   display: flex;
   flex-direction: column;
-  border-radius: 1em;
-  padding: 3em 2em;
+  background-color: #F2F2F2;
+  border-radius: 1.5em;
+  padding: 2.5em 2.5em 1.5em 2.5em;
 }
 
-article .cards {
-  padding: 1em 0;
-  width: 100%;
-}
-
-article .row {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-
-article .card {
+.random .card, .bests .card {
   background-color: white;
-  height: 50%;
-  width: 30%;
-  border-radius: 0.75em;
+  border-radius: 1.3em;
   margin: 1em 0;
-  padding: 0.3em 0.3em 0.7em 0.3em;
-  font-size: 12px;
+  padding: 0.3em 0.3em ;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
-article .card:hover {
+.random .card:hover, .bests .card:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-article img {
-  object-fit: cover;
-  max-height: 100px;
-  width: 100%;
-  border-radius: 0.75em 0.75em 0 0;
+.cards {
+  font-size: 13px;
 }
 
-article .card h4 {
-  padding: 0.3em 0.75em;
-  font-size: 1.2em;
+.card h4 {
+  font-size: 1.07em;
 }
 
-article p,.rating {
-  padding: 0.25em 1em;
+.rating i {
+  font-size: 0.8em
 }
 
-article .rating {
+.random .rating {
   display: flex;
 }
 
@@ -216,23 +354,61 @@ article .rating {
 .rating .negative {
   color: #F2F2F2;
 }
+/* END COMMON STYLE */
+
+/* RENTING ARTICLE STYLE */
+.random .cards {
+  padding: 1em 0;
+  width: 100%;
+}
+
+.random .row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.random .card {
+  height: 50%;
+  width: 30%;
+}
+
+.random img {
+  object-fit: cover;
+  max-height: 100px;
+  width: 100%;
+  border-radius: 1.2em 1.2em 0 0;
+}
+
+.random .card h4 {
+  padding: 0.5em 0 0.2em 0.75em;
+  font-size: 1.07em;
+}
+
+.random p,.rating {
+  padding: 0.1em 0.75em;
+}
+
+.random h3 {
+  padding-top: 1em;
+}
 
 /* PHONE SCREEN */
 @media screen and (max-width: 800px)
 {
-  article {
+  .random {
     background-color: white;
     padding: 2em 1.5em;
   }
 
-  article .row {
+  .random .row {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
-  article .card {
+  .random .card {
     background-color: white;
     margin: 0.5em 0;
     width: 100%;
@@ -241,74 +417,49 @@ article .rating {
 /* END RENTING ARTICLE */
 
 /* ASIDE STYLING */
-aside {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #F2F2F2;
-  border-radius: 0.75em;
-  margin-left: 2em;
-  padding: 3em 2em 1em 2em;
-}
-
-aside .title {
+.bests .title {
   display: flex;
   justify-content: space-between;
   padding-bottom: 1em;
 }
 
-aside .title i {
-  font-size: 1.25em;
+.bests .title i {
+  font-size: 1.5em;
 }
 
-aside .cards {
-  width: 100%;
-  height: 100%;
+.bests .cards {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-aside .card {
-  background-color: white;
+.bests .card {
   display: grid;
   grid-template-columns: 1.5fr 2fr;
   grid-template-rows: auto auto auto auto;
-  /* display: flex; */
-  width: 100%;
-  border-radius: 0.75em;
-  margin: 1em 0;
-  padding: 0.3em 0.3em;
-  font-size: 12px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  padding-right: 1em;
 }
 
-aside .card:hover {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
-
-aside img {
+.bests img {
   grid-column: 1;
   grid-row: 1 / 5;
   object-fit: cover;
   height: 120px;
   width: 100%;
-  border-radius: 0.75em 0 0 0.75em;
+  border-radius: 1.2em 0 0 1.2em;
 }
 
-aside .card h4 {
+.bests .card h4 {
   grid-row: 1;
   padding: 0.5em 0 0.3em 1.5em;
-  font-size: 1.2em;
 }
 
-aside p {
+.bests p {
   grid-row: 2;
   padding: 0.25em 1.7em;
 }
 
-aside .rating {
+.bests .rating {
   grid-row: 4;
   padding: 0 0 0.75em 1.7em;
   display: flex;
@@ -316,28 +467,23 @@ aside .rating {
 
 @media screen and (max-width: 800px)
 {
-  aside {
+  .bests {
     padding: 2em 1.5em;
     margin-left: 0;
     border-radius: 0;
   }
 
-  aside .card {
+  .bests .card {
     margin: 0.5em 0;
   }
 
-  aside img {
+  .bests img {
     height: 140px;
   }
 }
 
 /* END ASIDE */
-#rent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+
 
 #activities {
   display: flex;
@@ -355,7 +501,6 @@ footer {
     grid-template-areas:  "about quality assistance";
   align-items: center;
   padding: 3em 3em;
-  font-size: 13px;
 }
 
 footer h3 {
