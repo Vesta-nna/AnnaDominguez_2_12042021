@@ -31,7 +31,8 @@ body {
   grid-gap: 3em;
   grid-template-areas: 
     "hd"
-    "main"
+    "renting-search"
+    "activities"
     "ft";
 }
 
@@ -43,8 +44,12 @@ footer {
   grid-area: ft;
 }
 
-main {
-  grid-area: main;
+#renting-search {
+  grid-area: renting-search;
+}
+
+#activities {
+  grid-area: activities;
 }
 
 /* HEADER STYLE */
@@ -310,8 +315,8 @@ nav a:hover {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 0;
-    grid-template-areas:  ".bests"
-                          ".random";
+    grid-template-areas:  "bests"
+                          "random";
   }
 }
 
@@ -530,37 +535,6 @@ nav a:hover {
   grid-template-rows: minmax(60%, 90%) 3.5em;
 }
 
-/* .col-1 {
-  grid-area: col1;
-  height: 100%;
-  display: grid;
-  grid-template-rows: 100%;
-} */
-
-/* .col-2 {
-  grid-area: col2;
-  height: 100%;
-  display: grid;
-  grid-template-rows: 70% 30%;
-  grid-gap: 3em 0;
-
-} */
-
-/* .col-3 {
-  grid-area: col3;
-  height: 100%;
-  display: grid;
-  grid-template-rows: 100%;
-} */
-
-/* .col-4 {
-  grid-area: col4;
-  height: 100%;
-  display: grid;
-  grid-template-rows: 50% 50%;
-  grid-gap: 3em 0;
-} */
-
 .a {
   grid-area: a;
 }
@@ -602,19 +576,35 @@ nav a:hover {
   padding: 1em;
 }
 
+@media screen and (max-width: 800px) {
+  #activities {
+    display: flex;
+    flex-direction: column;
+    padding: 1em 1.5em;
+  }
+
+  #activities .cards {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #activities .cards .card img {
+    height: 140px;
+  }
+}
 
 
 /* END ACTIVITIES */
 
 /* FOOTER STYLE */
 footer {
+  bottom: 0;
   background-color: #F2F2F2;
   display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas:  "about quality assistance";
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:  "about quality assistance";
   align-items: center;
   padding: 3em 3em;
-  position: relative;
 }
 
 footer h3 {
@@ -639,10 +629,10 @@ footer .assistance {
 
 @media screen and (max-width: 800px) {
   footer {
+    bottom: 0;
     display: flex;
     flex-direction: column;
     align-items:flex-start;
-    padding: 1em 2em;
   }
   
   footer h3 {
