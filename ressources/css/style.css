@@ -28,11 +28,10 @@ body {
   height: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 3em;
+  grid-gap: 1em;
   grid-template-areas: 
     "hd"
-    "renting-search"
-    "activities"
+    "main"
     "ft";
 }
 
@@ -44,12 +43,8 @@ footer {
   grid-area: ft;
 }
 
-#renting-search {
-  grid-area: renting-search;
-}
-
-#activities {
-  grid-area: activities;
+main {
+  grid-area: main;
 }
 
 /* HEADER STYLE */
@@ -500,7 +495,7 @@ nav a:hover {
   height: 500px;
   display: flex;
   flex-direction: column;
-  padding: 0 4em 2em 4em;
+  padding: 0 4em;
 }
 
 #activities h2 {
