@@ -13,6 +13,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 a {
   color: black;
   text-decoration: none; /* no underline */
+  cursor: pointer;
 }
 /* END RESET */
 
@@ -64,6 +65,7 @@ header {
   padding: 2.5em 4em 0 2em;
   color: #0065FC;
   font-weight: bold;
+  cursor: pointer;
 }
 
 nav {
@@ -149,13 +151,15 @@ nav a:hover {
   align-items: center;
 }
 
-.town .loop p {
+.town .loop {
   font-weight: 600;
   font-size: 1.1em;
   background-color: #0065FC;
   color: white;
   padding: 0.8em 1em;
   border-radius: 0 0.75em 0.75em 0;
+  border: none;
+  cursor: pointer;
   grid-area: search;
 }
 
@@ -191,9 +195,14 @@ nav a:hover {
     display:inherit;
     background-color: #0065FC;
     color: white;
-    padding: 1em 1em;
-    border-radius: 0.75em 0.75em 0.75em 0.75em;
+    padding: 0.1em;
   }
+
+  .town .loop {
+    border-radius: 0.75em;
+    margin-right: 1em;
+  }
+
   .town .loop p {
     display: none;
   }
@@ -222,6 +231,7 @@ nav a:hover {
   grid-template-areas: "i name";
   align-items: center;
   margin: 0 1em;
+  cursor: pointer;
   border-radius: 5em;
   border: #F2F2F2 solid 2px;
   transition: all 0.3s cubic-bezier(.25,.8,.25,1)
@@ -627,7 +637,7 @@ footer .assistance {
     bottom: 0;
     display: flex;
     flex-direction: column;
-    align-items:flex-start;
+    align-items: flex-start;
   }
   
   footer h3 {
