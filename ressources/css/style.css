@@ -29,11 +29,23 @@ body {
   height: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 1em;
   grid-template-areas: 
     "hd"
     "main"
     "ft";
+  grid-gap: 1em;
+
+}
+
+@media screen and (max-width: 800px)
+{
+  h2 {
+    font-size: 1.7em;
+  }
+
+  h4 {
+   font-size: 1.15em;
+  }
 }
 
 header {
@@ -50,8 +62,9 @@ main {
 
 /* HEADER STYLE */
 header {
+  width: 100%;
   display: grid;
-  grid-template-columns: 3fr 2fr 1fr;
+  grid-template-columns: 3fr 1fr 0.5fr;
   grid-template-areas: "logo nav subscribe";
 }
 
@@ -62,10 +75,11 @@ header {
 
 #subscribe {
   grid-area: subscribe;
-  padding: 2.5em 4em 0 2em;
   color: #0065FC;
   font-weight: bold;
   cursor: pointer;
+  padding: 3.5em 0 0 1em;
+
 }
 
 nav {
@@ -74,16 +88,20 @@ nav {
   justify-content: space-evenly;
 }
 
+nav h4 {
+  font-weight: normal;
+}
+
 nav a {
-  padding: 2.5em 0;
+  padding: 3.5em 0 0 0;
   width: 100%;
   text-align: center;
 }
 
 nav a:hover {
   color: #0065FC;
-  padding-top: 2.3em;
-  border-top: #0065FC 3px solid;
+  padding-top: 3.5em;
+  border-top: #0065FC 2px solid;
 }
 
 /* PHONE SCREEN */
@@ -92,18 +110,19 @@ nav a:hover {
 {
   header {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(1fr, 2);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     grid-template-areas:  "logo subscribe"
                           "nav nav";
+    grid-gap: 0;
   }
   
   #logo {
-    padding: 1.5em 0 0 1.5em;
+    padding: 1em 0 0 0.7em;
   }
   
   #subscribe {
-    padding: 2.5em 1.25em 0 0;
+    padding: 3.1em 1.7em 0 0;
     text-align: end;
   }
 
@@ -113,13 +132,14 @@ nav a:hover {
 
   nav a {
     width: 100%;
+    padding: 0.5em 0 0.7em 0;
     border-bottom: #F2F2F2 3px solid;
-    padding: 1.5em 0 1em 0;
+    align-self: center;
   }
    
   nav a:hover {
     border-bottom: #0065FC 3px solid;
-    padding-top: 1.5em;
+    padding: 0.5em 0 0.7em 0;
     border-top: none;
   }
 }
@@ -127,13 +147,17 @@ nav a:hover {
 /* END HEADER STYLE */
 
 #renting-search {
-  padding: 0 3.5em 3.5em 3.5em;  
+  padding: 0 3.5em 3.5em 3.5em;
 }
 
 @media screen and (max-width: 800px)
 {
   #renting-search {
-    padding: 2em 0;  
+    padding: 0 0;  
+  }
+
+  .search p {
+    font-size: 16px;
   }
 }
 
@@ -416,6 +440,11 @@ nav a:hover {
     background-color: white;
     padding: 2em 1.5em;
   }
+  
+  .cards {
+    font-size: 15px;    
+  }
+
 
   .random .row {
     width: 100%;
@@ -495,6 +524,10 @@ nav a:hover {
 
   .bests img {
     height: 140px;
+  }
+
+  .bests p {
+    padding-right: 1em;
   }
 }
 
