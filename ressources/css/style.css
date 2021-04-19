@@ -118,7 +118,7 @@ nav a:hover {
   }
   
   #logo {
-    padding: 1em 0 0 0.7em;
+    padding: 2em 0 0 1.5em;
   }
   
   #subscribe {
@@ -175,7 +175,7 @@ nav a:hover {
   align-items: center;
 }
 
-.town .loop {
+.town button {
   font-weight: 600;
   font-size: 1.1em;
   background-color: #0065FC;
@@ -187,7 +187,7 @@ nav a:hover {
   grid-area: search;
 }
 
-.town .loop i {
+.town .loop {
   display: none;
 }
 
@@ -215,19 +215,15 @@ nav a:hover {
     padding: 2em 0 1em 0;
   }
   
-  .town .loop i {
+  .town .loop {
     display:inherit;
     background-color: #0065FC;
     color: white;
-    padding: 0.1em;
-  }
-
-  .town .loop {
+    padding: 1em;
     border-radius: 0.75em;
-    margin-right: 1em;
   }
 
-  .town .loop p {
+  .town .research-button {
     display: none;
   }
 }
