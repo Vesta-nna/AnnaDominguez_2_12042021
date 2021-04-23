@@ -66,12 +66,7 @@
   }
 
   .bests .cards {
-
     gap: 2em;
-  }
-
-  .bests .card {
-    /* margin: 0.5em 0; */
   }
 
   .bests img {
