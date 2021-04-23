@@ -2,7 +2,7 @@
 .bests .title {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 1em;
+  padding-bottom: 2em;
 }
 
 .bests .title i {
@@ -10,9 +10,8 @@
 }
 
 .bests .cards {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  gap: 2em
 }
 
 .bests .card {

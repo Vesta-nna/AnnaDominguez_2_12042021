@@ -1,18 +1,14 @@
 /* RENTING ARTICLE STYLE */
+.random .title {
+  padding-bottom: 1.5em;
+}
+
 .random .cards {
-  padding: 1em 0;
   width: 100%;
-}
-
-.random .row {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.random .card {
-  height: 50%;
-  width: 30%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2em;
 }
 
 .random img {
@@ -32,7 +28,7 @@
 }
 
 .random h3 {
-  padding-top: 1em;
+  padding-top: 2.5em;
 }
 
 /* PHONE SCREEN */
