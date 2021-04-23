@@ -1,0 +1,64 @@
+/* RENTING ARTICLE STYLE */
+.random .cards {
+  padding: 1em 0;
+  width: 100%;
+}
+
+.random .row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.random .card {
+  height: 50%;
+  width: 30%;
+}
+
+.random img {
+  object-fit: cover;
+  max-height: 100px;
+  width: 100%;
+  border-radius: 1.2em 1.2em 0 0;
+}
+
+.random .card h4 {
+  padding: 0.5em 0 0.2em 0.75em;
+  font-size: 1.07em;
+}
+
+.random p,.rating {
+  padding: 0.1em 0.75em;
+}
+
+.random h3 {
+  padding-top: 1em;
+}
+
+/* PHONE SCREEN */
+@media screen and (max-width: 700px)
+{
+  .random {
+    background-color: white;
+    padding: 2em 1.5em;
+  }
+  
+  .cards {
+    font-size: 15px;    
+  }
+
+
+  .random .row {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .random .card {
+    background-color: white;
+    margin: 0.5em 0;
+    width: 100%;
+  }
+}
+/* END RENTING ARTICLE */

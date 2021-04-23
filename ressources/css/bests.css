@@ -1,0 +1,71 @@
+/* ASIDE STYLING */
+.bests .title {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1em;
+}
+
+.bests .title i {
+  font-size: 1.5em;
+}
+
+.bests .cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bests .card {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  grid-template-rows: auto auto auto auto;
+  padding-right: 1em;
+}
+
+.bests img {
+  grid-column: 1;
+  grid-row: 1 / 5;
+  object-fit: cover;
+  height: 120px;
+  width: 100%;
+  border-radius: 1.2em 0 0 1.2em;
+}
+
+.bests .card h4 {
+  grid-row: 1;
+  padding: 0.5em 0 0.3em 1.5em;
+}
+
+.bests p {
+  grid-row: 2;
+  padding: 0.25em 1.7em;
+}
+
+.bests .rating {
+  grid-row: 4;
+  padding: 0 0 0.75em 1.7em;
+  display: flex;
+}
+
+@media screen and (max-width: 700px)
+{
+  .bests {
+    padding: 2em 1.5em;
+    margin-left: 0;
+    border-radius: 0;
+  }
+
+  .bests .card {
+    margin: 0.5em 0;
+  }
+
+  .bests img {
+    height: 140px;
+  }
+
+  .bests p {
+    padding-right: 1em;
+  }
+}
+
+/* END ASIDE */
