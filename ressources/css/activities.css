@@ -37,27 +37,27 @@
   grid-template-rows: minmax(60%, 90%) 3.5em;
 }
 
-.a {
+#activities .a {
   grid-area: a;
 }
 
-.b {
+#activities .b {
   grid-area: b;
 }
 
-.c {
+#activities .c {
   grid-area: c;
 }
 
-.d {
+#activities .d {
   grid-area: d;
 }
 
-.e {
+#activities .e {
   grid-area: e;
 }
 
-.f {
+#activities .f {
   grid-area: f;
 }
 
@@ -78,7 +78,7 @@
   padding: 1em;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
   #activities {
     display: flex;
     flex-direction: column;
@@ -86,7 +86,9 @@
   }
 
   #activities .cards {
+    font-size: 15px; 
     display: flex;
+    gap: 1em;
     flex-direction: column;
   }
 

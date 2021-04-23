@@ -23,7 +23,7 @@
   font-size: 1.07em;
 }
 
-.random p,.rating {
+.random p, .random .rating {
   padding: 0.1em 0.75em;
 }
 
@@ -32,21 +32,22 @@
 }
 
 /* PHONE SCREEN */
-@media screen and (max-width: 700px)
+@media screen and (max-width: 800px)
 {
   .random {
+    height: 100%;
     background-color: white;
-    padding: 2em 1.5em;
+    padding: 3em 1.5em 2em 1.5em;
   }
   
-  .cards {
-    font-size: 15px;    
+  .random .title {
+    justify-self: flex-end;
   }
-
-
-  .random .row {
-    width: 100%;
+  
+  .random .cards {
+    font-size: 15px; 
     display: flex;
+    gap: 0.5em;
     flex-direction: column;
     justify-content: space-between;
   }
@@ -54,7 +55,7 @@
   .random .card {
     background-color: white;
     margin: 0.5em 0;
-    width: 100%;
+    /* width: 100%; */
   }
 }
 /* END RENTING ARTICLE */
