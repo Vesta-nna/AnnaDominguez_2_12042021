@@ -244,5 +244,9 @@
     grid-template-areas:  "bests"
                           "random";
   }
+
+  .cards {
+    font-size: 15px;
+  }
 }
 /* END COMMON STYLE */
