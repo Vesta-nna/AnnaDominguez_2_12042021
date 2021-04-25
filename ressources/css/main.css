@@ -1,0 +1,252 @@
+
+#renting-search {
+  padding: 0 3.5em 3.5em 3.5em;
+}
+
+@media screen and (max-width: 800px)
+{
+  #renting-search {
+    padding: 0 0;  
+  }
+
+  .search p {
+    font-size: 16px;
+  }
+}
+
+.search h2 {
+  padding-bottom: 0.3em;
+}
+
+.search {
+  padding: 1em 0 2em 0;
+}
+
+.town {
+  padding-top: 1em;
+  display: flex;
+  align-items: center;
+}
+
+.town button {
+  font-weight: 600;
+  font-size: 1.1em;
+  background-color: #0065FC;
+  color: white;
+  padding: 0.8em 1em;
+  border-radius: 0 0.75em 0.75em 0;
+  border: none;
+  cursor: pointer;
+  grid-area: search;
+}
+
+.town .loop {
+  display: none;
+}
+
+.town .location {
+  font-size: 1.1em;
+  background-color: #F2F2F2;
+  padding: 0.85em 1.1em;
+  border-radius: 0.75em 0 0 0.75em;
+}
+
+.town input {
+  border-top: #F2F2F2 solid 2px;
+  border-bottom: #F2F2F2 solid 2px;
+  border-right: none;
+  border-left: none;
+  padding: 0.7em 1.5em;
+  font-weight: 600;
+  font-size: 1.1em;
+  color: black;
+}
+
+@media screen and (max-width: 800px)
+{
+  .town {
+    padding: 2em 0 1em 0;
+  }
+  
+  .town .loop {
+    display:inherit;
+    background-color: #0065FC;
+    color: white;
+    padding: 1em;
+    border-radius: 0.75em;
+  }
+
+  .town .research-button {
+    display: none;
+  }
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.options {
+  padding: 2em 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filters>h3 {
+  padding-right: 1em;
+}
+
+.filter {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-areas: "i name";
+  align-items: center;
+  margin: 0 1em;
+  cursor: pointer;
+  border-radius: 5em;
+  border: #F2F2F2 solid 2px;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1)
+}
+
+.filter h3 {
+  grid-area: name;
+  padding: 0 1em;
+}
+
+.filter i {
+  grid-area: i;
+  color: #0065FC;
+  background-color: #DEEBFF;
+  border-radius: 100%;
+  padding: 1em;
+}
+
+.filter:hover {
+  grid-template-areas: "name i";
+  color: #DEEBFF;
+  background-color: #0065FC;
+  border-left: #F2F2F2 solid 2px;
+  border-radius: 5em;
+}
+
+.info i {
+  border: 2px solid #F2F2F2;
+  padding: 0.40em 0.65em;
+  margin-right: 1em;
+  font-size: 0.75em;
+  border-radius: 100%;
+  color: #0065FC;
+}
+
+@media screen and (max-width: 800px)
+{
+  .search {
+    padding: 0 1.5em;
+  }
+
+  .filters {
+    padding-top: 1em;
+  }
+
+  .options {
+    padding: 0.5em 0;
+  }
+
+  .filter {
+    margin: 0.5em 0.3em 0.5em 0;
+  }
+
+  .info {
+    padding: 1.5em 0;
+    display: flex;
+    align-items: flex-start;
+  }
+
+}
+
+@media screen and (max-width: 800px)
+{
+  section {
+    padding: 0;
+  }
+}
+
+.renting-founded {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: "random bests";
+  grid-gap: 2.5em;
+}
+
+.random {
+  grid-area: random;
+}
+
+.bests {
+  grid-area: bests;
+}
+
+
+
+/* RENTING AND BESTS COMMON STYLE */
+.random, .bests {
+  display: flex;
+  flex-direction: column;
+  background-color: #F2F2F2;
+  border-radius: 1.5em;
+  padding: 2.5em 2.5em;
+}
+
+.random .card, .bests .card {
+  background-color: white;
+  border-radius: 1.3em;
+  padding: 0.3em 0.3em ;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.random .card:hover, .bests .card:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.cards {
+  font-size: 13px;
+}
+
+.card h4 {
+  font-size: 1.07em;
+}
+
+.rating i {
+  font-size: 0.8em
+}
+
+.random .rating {
+  display: flex;
+}
+
+.rating .positive {
+  color:#0065FC
+}
+
+.rating .negative {
+  color: #F2F2F2;
+}
+
+@media screen and (max-width: 800px) {
+  .renting-founded {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+    gap: 2em;
+    grid-template-areas:  "bests"
+                          "random";
+  }
+
+  .cards {
+    font-size: 15px;
+  }
+}
+/* END COMMON STYLE */
