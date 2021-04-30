@@ -10,8 +10,6 @@
 }
 
 .bests .cards {
-  width: 100%;
-  height: 100%;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 120px);
@@ -19,7 +17,6 @@
 }
 
 .bests .card {
-  height: 100%;
   display: grid;
   grid-template-columns: 1.2fr 2fr;
   grid-template-rows: 100%;
@@ -29,8 +26,6 @@
 .bests img {
   grid-column: 1;
   object-fit: cover;
-  height: 100%;
-  width: 100%;
   border-radius: 1.2em 0 0 1.2em;
 }
 
@@ -56,7 +51,6 @@
 @media screen and (max-width: 800px)
 {
   .bests {
-    height: 100%;
     padding: 2em 1.5em;
     border-radius: 0;
     display: flex;
@@ -65,10 +59,6 @@
 
   .bests .cards {
     gap: 2em;
-  }
-
-  .bests img {
-    height: 100%;
   }
 
   .bests p {
