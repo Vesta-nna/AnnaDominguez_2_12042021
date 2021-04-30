@@ -1,4 +1,4 @@
-
+/* MAIN STYLING */
 #renting-search {
   padding: 0 3.5em 3.5em 3.5em;
 }
@@ -142,6 +142,10 @@
 
 @media screen and (max-width: 800px)
 {
+  section {
+    padding: 0;
+  }
+
   .search {
     padding: 0 1.5em;
   }
@@ -166,13 +170,6 @@
 
 }
 
-@media screen and (max-width: 800px)
-{
-  section {
-    padding: 0;
-  }
-}
-
 .renting-founded {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -188,9 +185,7 @@
   grid-area: bests;
 }
 
-
-
-/* RENTING AND BESTS COMMON STYLE */
+/* RANDOM AND BESTS COMMON STYLE */
 .random, .bests {
   display: flex;
   flex-direction: column;
